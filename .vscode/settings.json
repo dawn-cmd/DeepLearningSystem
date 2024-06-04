@@ -3,5 +3,8 @@
         "*.cpp": "cpp",
         "*.h": "cpp",
         "new": "cpp"
-    }
+    },
+    "python.analysis.extraPaths": [
+        "./hw1/python"
+    ]
 }
