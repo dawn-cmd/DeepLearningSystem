@@ -144,7 +144,10 @@ class BatchNorm1d(Module):
         self.eps = eps
         self.momentum = momentum
         # BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        self.weight = Parameter(init.ones(dim, requires_grad=True))
+        self.bias = Parameter(init.zeros(dim, requires_grad=True))
+        self.running_mean = Parameter(init.zeros(dim, requires_grad=False))
+        self.running_var = Parameter(init.ones(dim, requires_grad=False))
         # END YOUR SOLUTION
 
     def forward(self, x: Tensor) -> Tensor:
