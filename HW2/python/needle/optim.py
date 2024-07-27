@@ -1,6 +1,7 @@
 """Optimization module"""
 import needle as ndl
 import numpy as np
+from collections import defaultdict
 
 
 class Optimizer:
@@ -20,21 +21,27 @@ class SGD(Optimizer):
         super().__init__(params)
         self.lr = lr
         self.momentum = momentum
-        self.u = {}
+        self.u = defaultdict(float)
         self.weight_decay = weight_decay
 
     def step(self):
-        ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
-        ### END YOUR SOLUTION
+        # BEGIN YOUR SOLUTION
+        for w in self.params:
+            if self.weight_decay > 0:
+                grad = w.grad.data + self.weight_decay * w.data
+            else:
+                grad = w.grad.data
+            self.u[w] = self.momentum * self.u[w] + (1 - self.momentum) * grad
+            w.data = w.data - self.lr * self.u[w]
+        # END YOUR SOLUTION
 
     def clip_grad_norm(self, max_norm=0.25):
         """
         Clips gradient norm of parameters.
         """
-        ### BEGIN YOUR SOLUTION
+        # BEGIN YOUR SOLUTION
         raise NotImplementedError()
-        ### END YOUR SOLUTION
+        # END YOUR SOLUTION
 
 
 class Adam(Optimizer):
@@ -59,6 +66,6 @@ class Adam(Optimizer):
         self.v = {}
 
     def step(self):
-        ### BEGIN YOUR SOLUTION
+        # BEGIN YOUR SOLUTION
         raise NotImplementedError()
-        ### END YOUR SOLUTION
+        # END YOUR SOLUTION
