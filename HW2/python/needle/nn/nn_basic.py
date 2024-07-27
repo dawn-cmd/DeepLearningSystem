@@ -152,7 +152,7 @@ class BatchNorm1d(Module):
 
     def forward(self, x: Tensor) -> Tensor:
         # BEGIN YOUR SOLUTION
-        if not self.training:
+        if self.training == False:
             norm = (x - self.running_mean.broadcast_to(x.shape)) / \
                 (self.running_var.broadcast_to(x.shape) + self.eps)**0.5
             return self.weight.broadcast_to(x.shape) * norm + self.bias.broadcast_to(x.shape)
@@ -162,7 +162,7 @@ class BatchNorm1d(Module):
         self.running_mean = (1 - self.momentum) * \
             self.running_mean + self.momentum * batch_mean.data
         self.running_var = (1 - self.momentum) * \
-            self.running_mean + self.momentum * batch_var.data
+            self.running_var + self.momentum * batch_var.data
         norm = (x - batch_mean.broadcast_to(x.shape)) / \
             (batch_var.broadcast_to(x.shape) + self.eps)**0.5
         return self.weight.broadcast_to(x.shape) * norm + self.bias.broadcast_to(x.shape)
