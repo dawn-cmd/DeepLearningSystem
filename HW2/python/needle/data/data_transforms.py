@@ -40,5 +40,7 @@ class RandomCrop(Transform):
         """
         shift_x, shift_y = np.random.randint(low=-self.padding, high=self.padding+1, size=2)
         ### BEGIN YOUR SOLUTION
-        
+        img_pad = np.pad(img, [(self.padding, self.padding), (self.padding, self.padding), (0, 0)], 'constant')
+        H, W, _ = img_pad.shape
+        return img_pad[self.padding + shift_x: H - self.padding + shift_x, self.padding + shift_y: W - self.padding + shift_y, :]
         ### END YOUR SOLUTION
