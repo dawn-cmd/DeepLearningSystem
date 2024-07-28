@@ -60,8 +60,8 @@ class DataLoader:
     def __iter__(self):
         # BEGIN YOUR SOLUTION
         if self.shuffle:
-            self.ordering = np.array_split(np.random.permutation(len(self.dataset)), range(
-                self.batch_size, len(self.dataset), self.batch_size))
+            self.ordering = np.array_split(np.random.permutation(len(self.dataset)),
+                                           range(self.batch_size, len(self.dataset), self.batch_size))
         self.idx = -1
         # END YOUR SOLUTION
         return self
@@ -72,5 +72,5 @@ class DataLoader:
         if self.idx >= len(self.ordering):
             raise StopIteration
         samples = [self.dataset[i] for i in self.ordering[self.idx]]
-        return [Tensor(np.stack([samples[i][j] for i in range(len(samples))])) for j in range(len(samples[0]))]
+        return [Tensor([samples[i][j] for i in range(len(samples))]) for j in range(len(samples[0]))]
         # END YOUR SOLUTION

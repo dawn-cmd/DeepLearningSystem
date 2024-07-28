@@ -13,41 +13,36 @@ class MNISTDataset(Dataset):
         transforms: Optional[List] = None,
     ):
         # BEGIN YOUR SOLUTION
-        self.transforms = transforms
-        with gzip.open(image_filename, "rb") as img_file:
-            magic_num, img_num, row, col = struct.unpack(
-                ">4i", img_file.read(16))
-            assert (magic_num == 2051)
-            tot_pixels = row * col
-            imgs = [np.array(struct.unpack(f"{tot_pixels}B",
-                                           img_file.read(tot_pixels)),
-                             dtype=np.float32)
-                    for _ in range(img_num)]
-            X = np.vstack(imgs)
+        with gzip.open(image_filename, 'rb') as img_file:
+            magic_number, num_examples, row, column = struct.unpack('>4I', img_file.read(16))
+            assert(magic_number == 2051)
+            input_dim = row * column
+            X = np.array(struct.unpack(str(input_dim * num_examples) + 'B', img_file.read()), dtype=np.float32).reshape(num_examples, input_dim)
             X -= np.min(X)
             X /= np.max(X)
-            self.X = X
-
-        with gzip.open(label_filename, "rb") as label_file:
-            magic_num, label_num = struct.unpack(">2i", label_file.read(8))
-            assert (magic_num == 2049)
-            self.y = np.array(struct.unpack(
-                f"{label_num}B", label_file.read()), dtype=np.uint8)
+        with gzip.open(label_filename, 'rb') as label_file:
+            magic_number, num_items = struct.unpack('>2I', label_file.read(8))
+            assert(magic_number == 2049)
+            y = np.array(struct.unpack(str(num_items) + 'B', label_file.read()), dtype=np.uint8)
+        self.images = X
+        self.img_row = row
+        self.img_column = column
+        self.labels = y
+        self.transforms = transforms
         # END YOUR SOLUTION
 
     def __getitem__(self, index) -> object:
         # BEGIN YOUR SOLUTION
-        imgs = self.X[index]
-        labels = self.y[index]
+        imgs = self.images[index]
+        labels = self.labels[index]
         if len(imgs.shape) > 1:
-            imgs = np.vstack([self.apply_transforms(
-                img.reshape(28, 28, 1)) for img in imgs])
+            imgs = np.array([self.apply_transforms(img.reshape(self.img_row, self.img_column, 1)).reshape(imgs[0].shape) for img in imgs])
         else:
-            imgs = self.apply_transforms(imgs.reshape(28, 28, 1))
+            imgs = self.apply_transforms(imgs.reshape(self.img_row, self.img_column, 1)).reshape(imgs.shape)
         return (imgs, labels)
         # END YOUR SOLUTION
 
     def __len__(self) -> int:
         # BEGIN YOUR SOLUTION
-        return self.X.shape[0]
+        return self.images.shape[0]
         # END YOUR SOLUTION
