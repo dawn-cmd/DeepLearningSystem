@@ -1,12 +1,12 @@
+import sys
+sys.path.append("../python")
+from needle.data import MNISTDataset, DataLoader
 import os
 import time
 import numpy as np
 import needle.nn as nn
 import needle as ndl
-import sys
 
-sys.path.append("../python")
-from needle.data import MNISTDataset, DataLoader
 np.random.seed(0)
 # MY_DEVICE = ndl.backend_selection.cuda()
 
@@ -91,4 +91,6 @@ def train_mnist(
 
 
 if __name__ == "__main__":
-    train_mnist(data_dir="../data")
+    train_err, train_loss, test_err, test_loss = train_mnist(data_dir="../data")
+    print(f"Train Error: {train_err:.4f}, Train Loss: {train_loss:.4f}")
+    print(f"Test Error: {test_err:.4f}, Test Loss: {test_loss:.4f}")
