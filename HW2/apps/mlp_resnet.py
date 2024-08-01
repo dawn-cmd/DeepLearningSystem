@@ -6,18 +6,17 @@ import time
 import numpy as np
 import needle.nn as nn
 import needle as ndl
+from tqdm import tqdm  # Import tqdm for progress bars
 
 np.random.seed(0)
 # MY_DEVICE = ndl.backend_selection.cuda()
 
 
 def ResidualBlock(dim, hidden_dim, norm=nn.BatchNorm1d, drop_prob=0.1):
-    # BEGIN YOUR SOLUTION
     main_path = nn.Sequential(nn.Linear(dim, hidden_dim), norm(hidden_dim), nn.ReLU(
     ), nn.Dropout(drop_prob), nn.Linear(hidden_dim, dim), norm(dim))
     res = nn.Residual(main_path)
     return nn.Sequential(res, nn.ReLU())
-    # END YOUR SOLUTION
 
 
 def MLPResNet(
@@ -28,30 +27,27 @@ def MLPResNet(
     norm=nn.BatchNorm1d,
     drop_prob=0.1,
 ):
-    # BEGIN YOUR SOLUTION
     resnet = nn.Sequential(nn.Linear(dim, hidden_dim), nn.ReLU(),
                            *[ResidualBlock(dim=hidden_dim, hidden_dim=hidden_dim//2,
                                            norm=norm, drop_prob=drop_prob) for _ in range(num_blocks)],
                            nn.Linear(hidden_dim, num_classes))
     return resnet
-    # END YOUR SOLUTION
 
 
 def epoch(dataloader, model, opt=None):
     np.random.seed(4)
-    # BEGIN YOUR SOLUTION
     tot_loss, tot_error = [], 0.0
     loss_fn = nn.SoftmaxLoss()
     if opt is None:
         model.eval()
-        for X, y in dataloader:
+        for X, y in tqdm(dataloader, desc="Evaluating", leave=False):
             logits = model(X)
             loss = loss_fn(logits, y)
             tot_error += np.sum(logits.numpy().argmax(axis=1) != y.numpy())
             tot_loss.append(loss.numpy())
     else:
         model.train()
-        for X, y in dataloader:
+        for X, y in tqdm(dataloader, desc="Training", leave=False):
             logits = model(X)
             loss = loss_fn(logits, y)
             tot_error += np.sum(logits.numpy().argmax(axis=1) != y.numpy())
@@ -61,7 +57,6 @@ def epoch(dataloader, model, opt=None):
             opt.step()
     sample_nums = len(dataloader.dataset)
     return tot_error/sample_nums, np.mean(tot_loss)
-    # END YOUR SOLUTION
 
 
 def train_mnist(
@@ -74,7 +69,6 @@ def train_mnist(
     data_dir="data",
 ):
     np.random.seed(4)
-    # BEGIN YOUR SOLUTION
     resnet = MLPResNet(28*28, hidden_dim=hidden_dim, num_classes=10)
     opt = optimizer(resnet.parameters(), lr=lr, weight_decay=weight_decay)
     train_set = MNISTDataset(f"{data_dir}/train-images-idx3-ubyte.gz", 
@@ -83,14 +77,20 @@ def train_mnist(
                             f"{data_dir}/t10k-labels-idx1-ubyte.gz")
     train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_set, batch_size=batch_size)
-    for _ in range(epochs):
+
+    for epoch_num in range(epochs):
+        print(f"Epoch {epoch_num + 1}/{epochs}")
         train_err, train_loss = epoch(train_loader, resnet, opt)
+        print(f"Train Error: {train_err:.4f}, Train Loss: {train_loss:.4f}")
+
     test_err, test_loss = epoch(test_loader, resnet, None)
+    print(f"Test Error: {test_err:.4f}, Test Loss: {test_loss:.4f}")
+
     return train_err, train_loss, test_err, test_loss
-    # END YOUR SOLUTION
 
 
 if __name__ == "__main__":
     train_err, train_loss, test_err, test_loss = train_mnist(data_dir="../data")
     print(f"Train Error: {train_err:.4f}, Train Loss: {train_loss:.4f}")
     print(f"Test Error: {test_err:.4f}, Test Loss: {test_loss:.4f}")
+
