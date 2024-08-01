@@ -69,7 +69,7 @@ def train_mnist(
     data_dir="data",
 ):
     np.random.seed(4)
-    resnet = MLPResNet(28*28, hidden_dim=hidden_dim, num_classes=10)
+    resnet = MLPResNet(28*28, hidden_dim=hidden_dim, num_classes=10, drop_prob=0.2)
     opt = optimizer(resnet.parameters(), lr=lr, weight_decay=weight_decay)
     train_set = MNISTDataset(f"{data_dir}/train-images-idx3-ubyte.gz", 
                              f"{data_dir}/train-labels-idx1-ubyte.gz")
@@ -81,16 +81,14 @@ def train_mnist(
     for epoch_num in range(epochs):
         print(f"Epoch {epoch_num + 1}/{epochs}")
         train_err, train_loss = epoch(train_loader, resnet, opt)
-        print(f"Train Error: {train_err:.4f}, Train Loss: {train_loss:.4f}")
+        print(f"Train Error: {train_err * 100:.4f}%, Train Loss: {train_loss * 100:.4f}%")
 
     test_err, test_loss = epoch(test_loader, resnet, None)
-    print(f"Test Error: {test_err:.4f}, Test Loss: {test_loss:.4f}")
+    print(f"Test Error: {test_err*100:.4f}%, Test Loss: {test_loss*100:.4f}%")
 
     return train_err, train_loss, test_err, test_loss
 
 
 if __name__ == "__main__":
     train_err, train_loss, test_err, test_loss = train_mnist(data_dir="../data")
-    print(f"Train Error: {train_err:.4f}, Train Loss: {train_loss:.4f}")
-    print(f"Test Error: {test_err:.4f}, Test Loss: {test_loss:.4f}")
 
