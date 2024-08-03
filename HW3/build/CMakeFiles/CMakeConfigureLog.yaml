@@ -571,3 +571,44 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindCUDA/select_compute_arch.cmake:141 (try_run)"
+      - "/usr/share/cmake-3.28/Modules/FindCUDA/select_compute_arch.cmake:197 (CUDA_DETECT_INSTALLED_GPUS)"
+      - "CMakeLists.txt:66 (CUDA_SELECT_NVCC_ARCH_FLAGS)"
+    directories:
+      source: "/home/hyjing/Code/DeepLearningSystem/HW3/build/CMakeFiles/CMakeScratch/TryCompile-iuETW3"
+      binary: "/home/hyjing/Code/DeepLearningSystem/HW3/build/CMakeFiles/CMakeScratch/TryCompile-iuETW3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-std=c++11 -O2 -march=native "
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "compile_result"
+      cached: true
+      stdout: |
+        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW3/build/CMakeFiles/CMakeScratch/TryCompile-iuETW3'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d99ae/fast
+        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW3/build/CMakeFiles/CMakeScratch/TryCompile-iuETW3'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d99ae.dir/build.make CMakeFiles/cmTC_d99ae.dir/build
+        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW3/build/CMakeFiles/CMakeScratch/TryCompile-iuETW3'
+        Building CXX object CMakeFiles/cmTC_d99ae.dir/detect_cuda_compute_capabilities.cpp.o
+        /usr/bin/c++  -I/usr/local/cuda/include -std=c++11 -O2 -march=native   -o CMakeFiles/cmTC_d99ae.dir/detect_cuda_compute_capabilities.cpp.o -c /home/hyjing/Code/DeepLearningSystem/HW3/build/detect_cuda_compute_capabilities.cpp
+        Linking CXX executable cmTC_d99ae
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d99ae.dir/link.txt --verbose=1
+        /usr/bin/c++ -std=c++11 -O2 -march=native   CMakeFiles/cmTC_d99ae.dir/detect_cuda_compute_capabilities.cpp.o -o cmTC_d99ae  -Wl,-rpath,/usr/local/cuda/lib64 /usr/local/cuda/lib64/libcudart.so 
+        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW3/build/CMakeFiles/CMakeScratch/TryCompile-iuETW3'
+        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW3/build/CMakeFiles/CMakeScratch/TryCompile-iuETW3'
+        
+      exitCode: 0
+    runResult:
+      variable: "run_result"
+      cached: true
+      stdout: |
+        8.6 
+      exitCode: 0
+...
