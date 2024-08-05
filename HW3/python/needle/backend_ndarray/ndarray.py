@@ -367,7 +367,12 @@ class NDArray:
         assert len(idxs) == self.ndim, "Need indexes equal to number of dimensions"
 
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        new_shape = [(sl.stop - sl.start + sl.step - 1) // sl.step for sl in idxs]
+        offset = 0
+        for sl, st in zip(idxs, self._strides):
+            offset += sl.start * st 
+        new_strides = tuple([st * sl.step for st, sl in zip(self._strides, idxs)])
+        return NDArray.make(shape=new_shape, strides=new_strides, device=self._device, handle=self._handle, offset=offset)
         ### END YOUR SOLUTION
 
     def __setitem__(self, idxs, other):
