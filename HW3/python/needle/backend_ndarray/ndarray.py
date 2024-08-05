@@ -247,7 +247,9 @@ class NDArray:
         """
 
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        if prod(self._shape) != prod(new_shape) or not self.is_compact():
+            raise ValueError("Product of current shape is not equal to the product of the new shape")
+        return NDArray.make(new_shape, strides=NDArray.compact_strides(new_shape), device=self._device, handle=self._handle, offset=self._offset)
         ### END YOUR SOLUTION
 
     def permute(self, new_axes):
@@ -272,7 +274,7 @@ class NDArray:
         """
 
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        return NDArray.make(shape=tuple([self.shape[i] for i in new_axes]), strides=tuple([self.strides[i] for i in new_axes]), device=self._device, handle=self._handle, offset=self._offset)
         ### END YOUR SOLUTION
 
     def broadcast_to(self, new_shape):
@@ -296,7 +298,9 @@ class NDArray:
         """
 
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        assert all([new_shape[i] == self._shape[i] or self._shape[i] == 1 for i in range(len(self._shape))])
+        new_strides = tuple(self._strides[i] if self._shape[i] == new_shape[i] else 0 for i in range(len(self._shape)))
+        return NDArray.make(shape=new_shape, strides=new_strides, device=self._device, handle=self._handle, offset=self._offset)
         ### END YOUR SOLUTION
 
     ### Get and set elements
