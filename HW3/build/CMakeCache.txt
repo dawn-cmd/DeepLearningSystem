@@ -310,7 +310,7 @@ CUDA_cufft_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libcufft.so
 CUDA_cufftemu_LIBRARY:FILEPATH=CUDA_cufftemu_LIBRARY-NOTFOUND
 
 //"cupti" library
-CUDA_cupti_LIBRARY:FILEPATH=CUDA_cupti_LIBRARY-NOTFOUND
+CUDA_cupti_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libcupti.so
 
 //"curand" library
 CUDA_curand_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libcurand.so
@@ -631,40 +631,40 @@ CUDA_run_nvcc:INTERNAL=/usr/share/cmake-3.28/Modules/FindCUDA/run_nvcc.cmake
 //Details about finding CUDA
 FIND_PACKAGE_MESSAGE_DETAILS_CUDA:INTERNAL=[/usr/local/cuda][/usr/local/cuda/bin/nvcc][/usr/local/cuda/include][/usr/local/cuda/lib64/libcudart.so][v12.6()]
 //Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/home/hyjing/Code/DeepLearningSystem/.conda/bin/python3][/home/hyjing/Code/DeepLearningSystem/.conda/include/python3.11][/home/hyjing/Code/DeepLearningSystem/.conda/lib/libpython3.11.so][cfound components: Development Interpreter Development.Module Development.Embed ][v3.11.9()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/home/hyjing/Code/DeepLearningSystem/.venv/bin/python3][/usr/include/python3.12][/usr/lib/x86_64-linux-gnu/libpython3.12.so][cfound components: Development Interpreter Development.Module Development.Embed ][v3.12.3()]
 //Test HAS_FLTO
 HAS_FLTO:INTERNAL=1
 //Python executable during the last CMake run
-PYBIND11_PYTHON_EXECUTABLE_LAST:INTERNAL=/home/hyjing/Code/DeepLearningSystem/.conda/bin/python3
+PYBIND11_PYTHON_EXECUTABLE_LAST:INTERNAL=/home/hyjing/Code/DeepLearningSystem/.venv/bin/python3
 //Python debug status
 PYTHON_IS_DEBUG:INTERNAL=0
 PYTHON_MODULE_DEBUG_POSTFIX:INTERNAL=
-PYTHON_MODULE_EXTENSION:INTERNAL=.cpython-311-x86_64-linux-gnu.so
+PYTHON_MODULE_EXTENSION:INTERNAL=.cpython-312-x86_64-linux-gnu.so
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 _PYBIND11_CROSSCOMPILING:INTERNAL=OFF
 _Python:INTERNAL=Python
 //Compiler reason failure
 _Python_Compiler_REASON_FAILURE:INTERNAL=
-_Python_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=1190b96291e979535817a682cc932bbb
-_Python_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=6a8d5204659d94dd6d0077e03b07aa13
+_Python_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=30e5e190aa43b60d034710c8e4b5bc77
+_Python_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=3fb160f35f30a9e49a58b16f4a5af3ad
 //Development reason failure
 _Python_Development_REASON_FAILURE:INTERNAL=
 //Path to a program.
-_Python_EXECUTABLE:INTERNAL=/home/hyjing/Code/DeepLearningSystem/.conda/bin/python3
+_Python_EXECUTABLE:INTERNAL=/home/hyjing/Code/DeepLearningSystem/.venv/bin/python3
 //Path to a file.
-_Python_INCLUDE_DIR:INTERNAL=/home/hyjing/Code/DeepLearningSystem/.conda/include/python3.11
+_Python_INCLUDE_DIR:INTERNAL=/usr/include/python3.12
 //Python Properties
-_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;9;64;;cpython-311-x86_64-linux-gnu;abi3;/home/hyjing/Code/DeepLearningSystem/.conda/lib/python3.11;/home/hyjing/Code/DeepLearningSystem/.conda/lib/python3.11;/home/hyjing/Code/DeepLearningSystem/.conda/lib/python3.11/site-packages;/home/hyjing/Code/DeepLearningSystem/.conda/lib/python3.11/site-packages
-_Python_INTERPRETER_SIGNATURE:INTERNAL=778d480d2117cf690fe1eeafb9f38750
+_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;3;64;;cpython-312-x86_64-linux-gnu;abi3;/usr/lib/python3.12;/home/hyjing/Code/DeepLearningSystem/.venv/lib/python3.12;/home/hyjing/Code/DeepLearningSystem/.venv/lib/python3.12/site-packages;/home/hyjing/Code/DeepLearningSystem/.venv/lib/python3.12/site-packages
+_Python_INTERPRETER_SIGNATURE:INTERNAL=ae1e5509293c236cfbd23902e51eb653
 //Path to a library.
-_Python_LIBRARY_RELEASE:INTERNAL=/home/hyjing/Code/DeepLearningSystem/.conda/lib/libpython3.11.so
+_Python_LIBRARY_RELEASE:INTERNAL=/usr/lib/x86_64-linux-gnu/libpython3.12.so
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
 //Result of TRY_COMPILE
 compile_result:INTERNAL=TRUE
 //Directories where pybind11 and possibly Python headers are located
-pybind11_INCLUDE_DIRS:INTERNAL=/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/include;/home/hyjing/Code/DeepLearningSystem/.conda/include/python3.11
+pybind11_INCLUDE_DIRS:INTERNAL=/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/include;/usr/include/python3.12
 //Result of try_run()
 run_result:INTERNAL=0
 

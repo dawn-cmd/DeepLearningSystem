@@ -13,7 +13,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
   "CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o.cmake.pre-gen"
   "CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o.depend"
-  "detect_cuda_compute_capabilities.cpp"
   "/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake"
   "/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake"
   "/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11ConfigVersion.cmake"
