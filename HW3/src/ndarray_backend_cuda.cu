@@ -464,6 +464,20 @@ void EwiseTanh(const CudaArray &a, CudaArray *out)
     EwiseTanhKernel<<<dim.grid, dim.block>>>(a.ptr, out->ptr, out->size);
 }
 
+__global__ void MatmulKernel(const scalar_t *a, const scalar_t *b, scalar_t *out, uint32_t M, uint32_t N, uint32_t P)
+{
+    size_t i = blockIdx.x * blockDim.x + threadIdx.x;
+    size_t j = blockIdx.y * blockDim.y + threadIdx.y;
+    if (i < M && j < P)
+    {
+        out[i * P + j] = 0;
+        for (int k = 0; k < N; k++)
+        {
+            out[i * P + j] += a[i * N + k] * b[k * P + j];
+        }
+    }
+}
+
 void Matmul(const CudaArray &a, const CudaArray &b, CudaArray *out, uint32_t M, uint32_t N, uint32_t P)
 {
     /**
@@ -489,7 +503,9 @@ void Matmul(const CudaArray &a, const CudaArray &b, CudaArray *out, uint32_t M, 
      */
 
     /// BEGIN SOLUTION
-    assert(false && "Not Implemented");
+    dim3 grid(BASE_THREAD_NUM, BASE_THREAD_NUM, 1);
+    dim3 block((M + BASE_THREAD_NUM - 1) / BASE_THREAD_NUM, (P + BASE_THREAD_NUM - 1) / BASE_THREAD_NUM, 1);
+    MatmulKernel<<<grid, block>>>(a.ptr, b.ptr, out->ptr, M, N, P);
     /// END SOLUTION
 }
 
@@ -503,8 +519,9 @@ __global__ void ReduceMaxKernel(const scalar_t *a, scalar_t *out, size_t size, s
     if (gid >= size)
         return;
     out[gid] = a[gid * reduce_size];
-    for (int i = 0; i < reduce_size; ++i) {
-        out[gid] = max(out[gid], a[gid * reduce_size + i]); 
+    for (int i = 0; i < reduce_size; ++i)
+    {
+        out[gid] = max(out[gid], a[gid * reduce_size + i]);
     }
 }
 
@@ -531,8 +548,9 @@ __global__ void ReduceSumKernel(const scalar_t *a, scalar_t *out, size_t size, s
     if (gid >= size)
         return;
     out[gid] = 0;
-    for (int i = 0; i < reduce_size; ++i) {
-        out[gid] += a[gid * reduce_size + i]; 
+    for (int i = 0; i < reduce_size; ++i)
+    {
+        out[gid] += a[gid * reduce_size + i];
     }
 }
 
@@ -549,7 +567,7 @@ void ReduceSum(const CudaArray &a, CudaArray *out, size_t reduce_size)
      */
     /// BEGIN SOLUTION
     CudaDims dim = CudaOneDim(out->size);
-    ReduceSumKernel<<<dim.grid, dim.block>>>(a.ptr, out->ptr, out->size, reduce_size); 
+    ReduceSumKernel<<<dim.grid, dim.block>>>(a.ptr, out->ptr, out->size, reduce_size);
     /// END SOLUTION
 }
 
