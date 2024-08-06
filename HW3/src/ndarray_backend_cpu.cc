@@ -204,43 +204,111 @@ void ScalarAdd(const AlignedArray &a, scalar_t val, AlignedArray *out)
  * functions (however you want to do so, as long as the functions match the proper)
  * signatures above.
  */
-enum ewise_scalar_op_type {
-    EwiseMul, ScalarMul,
-    EwiseDiv, ScalarDiv,
-    ScalarPower,
-    EwiseMaximum, ScalarMaximum,
-    EwiseEq, ScalarEq,
-    EwiseGe, ScalarGe,
-    EwiseLog,
-    EwiseExp,
-    EwiseTanh,
-};
 
-void EwiseOrScalarOp(const AlignedArray &a, const AlignedArray &b, scalar_t val, AlignedArray *out, ewise_scalar_op_type op)
+void EwiseMul(const AlignedArray &a, const AlignedArray &b, AlignedArray *out)
 {
-    /**
-     * Set entries in out to be the sum of correspondings entires in a and b.
-     */
-    switch (op) {
-        case EwiseMul: {
-            for (size_t i = 0; i < a.size; ++i) {
-                out->ptr[i] = a.ptr[i] * b.ptr[i];
-            }
-            break;
-        }
-        case ScalarMul: {
-            for (size_t i = 0; i < a.size; ++i) {
-                out->ptr[i] = a.ptr[i] * val;
-            }
-            break;
-        }
-        case EwiseDiv: {
-             for (size_t i = 0; i < a.size; ++i) {
-                out->ptr[i] = a.ptr[i] / b.ptr[i];
-            }
-            break;
-        }
-        case 
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = a.ptr[i] * b.ptr[i];
+    }
+}
+void ScalarMul(const AlignedArray &a, scalar_t val, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = a.ptr[i] * val;
+    }
+}
+
+void EwiseDiv(const AlignedArray &a, const AlignedArray &b, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = a.ptr[i] / b.ptr[i];
+    }
+}
+void ScalarDiv(const AlignedArray &a, scalar_t val, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = a.ptr[i] / val;
+    }
+}
+
+void ScalarPower(const AlignedArray &a, scalar_t val, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = std::pow(a.ptr[i], val);
+    }
+}
+
+void EwiseMaximum(const AlignedArray &a, const AlignedArray &b, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = std::max(a.ptr[i], b.ptr[i]);
+    }
+}
+void ScalarMaximum(const AlignedArray &a, scalar_t val, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = std::max(a.ptr[i], val);
+    }
+}
+
+void EwiseEq(const AlignedArray &a, const AlignedArray &b, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = a.ptr[i] == b.ptr[i];
+    }
+}
+void ScalarEq(const AlignedArray &a, scalar_t val, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = a.ptr[i] == val;
+    }
+}
+
+void EwiseGe(const AlignedArray &a, const AlignedArray &b, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = a.ptr[i] >= b.ptr[i];
+    }
+}
+void ScalarGe(const AlignedArray &a, scalar_t val, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = a.ptr[i] >= val;
+    }
+}
+
+void EwiseLog(const AlignedArray &a, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = std::log(a.ptr[i]);
+    }
+}
+
+void EwiseExp(const AlignedArray &a, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = std::exp(a.ptr[i]);
+    }
+}
+
+void EwiseTanh(const AlignedArray &a, AlignedArray *out)
+{
+    for (size_t i = 0; i < a.size; i++)
+    {
+        out->ptr[i] = std::tanh(a.ptr[i]);
     }
 }
 
