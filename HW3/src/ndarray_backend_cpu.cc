@@ -204,6 +204,45 @@ void ScalarAdd(const AlignedArray &a, scalar_t val, AlignedArray *out)
  * functions (however you want to do so, as long as the functions match the proper)
  * signatures above.
  */
+enum ewise_scalar_op_type {
+    EwiseMul, ScalarMul,
+    EwiseDiv, ScalarDiv,
+    ScalarPower,
+    EwiseMaximum, ScalarMaximum,
+    EwiseEq, ScalarEq,
+    EwiseGe, ScalarGe,
+    EwiseLog,
+    EwiseExp,
+    EwiseTanh,
+};
+
+void EwiseOrScalarOp(const AlignedArray &a, const AlignedArray &b, scalar_t val, AlignedArray *out, ewise_scalar_op_type op)
+{
+    /**
+     * Set entries in out to be the sum of correspondings entires in a and b.
+     */
+    switch (op) {
+        case EwiseMul: {
+            for (size_t i = 0; i < a.size; ++i) {
+                out->ptr[i] = a.ptr[i] * b.ptr[i];
+            }
+            break;
+        }
+        case ScalarMul: {
+            for (size_t i = 0; i < a.size; ++i) {
+                out->ptr[i] = a.ptr[i] * val;
+            }
+            break;
+        }
+        case EwiseDiv: {
+             for (size_t i = 0; i < a.size; ++i) {
+                out->ptr[i] = a.ptr[i] / b.ptr[i];
+            }
+            break;
+        }
+        case 
+    }
+}
 
 void Matmul(const AlignedArray &a, const AlignedArray &b, AlignedArray *out, uint32_t m, uint32_t n, uint32_t p)
 {
