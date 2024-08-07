@@ -530,23 +530,54 @@ namespace needle
             EwiseTanhKernel<<<dim.grid, dim.block>>>(a.ptr, out->ptr, out->size);
         }
 
-        __global__ void MatmulKernel(const scalar_t* a,
-                                     const scalar_t* b,
-                                     scalar_t* out,
+#define TILE_SIZE 16
+
+        __global__ void MatmulKernel(const float* a,
+                                     const float* b,
+                                     float* out,
                                      uint32_t M,
                                      uint32_t N,
                                      uint32_t P)
         {
-            size_t i = blockIdx.x * blockDim.x + threadIdx.x;
-            size_t j = blockIdx.y * blockDim.y + threadIdx.y;
-            if (i < M && j < P)
+            // Allocate shared memory for tiles
+            __shared__ float tile_a[TILE_SIZE][TILE_SIZE];
+            __shared__ float tile_b[TILE_SIZE][TILE_SIZE];
+
+            // Calculate global row and column indices
+            uint32_t row = blockIdx.y * TILE_SIZE + threadIdx.y;
+            uint32_t col = blockIdx.x * TILE_SIZE + threadIdx.x;
+
+            // Initialize the output element to 0
+            float value = 0;
+
+            // Loop over tiles
+            for (int m = 0; m < (N + TILE_SIZE - 1) / TILE_SIZE; ++m)
             {
-                out[i * P + j] = 0;
-                for (int k = 0; k < N; k++)
-                {
-                    out[i * P + j] += a[i * N + k] * b[k * P + j];
-                }
+                // Load tiles into shared memory
+                if (row < M && m * TILE_SIZE + threadIdx.x < N)
+                    tile_a[threadIdx.y][threadIdx.x] = a[row * N + m * TILE_SIZE + threadIdx.x];
+                else
+                    tile_a[threadIdx.y][threadIdx.x] = 0.0;
+
+                if (col < P && m * TILE_SIZE + threadIdx.y < N)
+                    tile_b[threadIdx.y][threadIdx.x] = b[(m * TILE_SIZE + threadIdx.y) * P + col];
+                else
+                    tile_b[threadIdx.y][threadIdx.x] = 0.0;
+
+                // Synchronize to ensure tiles are loaded
+                __syncthreads();
+
+                // Perform the multiplication for this tile
+                for (int e = 0; e < TILE_SIZE; ++e)
+                    value += tile_a[threadIdx.y][e] * tile_b[e][threadIdx.x];
+
+                // Synchronize to ensure computation is done before loading new tiles
+                __syncthreads();
             }
+
+            // Write the result to the output matrix
+            if (row < M && col < P)
+                out[row * P + col] = value;
         }
 
         void Matmul(const CudaArray& a,
@@ -556,36 +587,12 @@ namespace needle
                     uint32_t N,
                     uint32_t P)
         {
-            /**
-             * Multiply two (compact) matrices into an output (also comapct) matrix.  You
-             * will want to look at the lecture and notes on GPU-based linear algebra to
-             * see how to do this.  Since ultimately mugrade is just evaluating
-             * correctness, you _can_ implement a version that simply parallelizes over
-             * (i,j) entries in the output array.  However, to really get the full benefit
-             * of this problem, we would encourage you to use cooperative fetching, shared
-             * memory register tiling, and other ideas covered in the class notes.  Note
-             * that unlike the tiled matmul function in the CPU backend, here you should
-             * implement a single function that works across all size matrices, whether or
-             * not they are a multiple of a tile size.  As with previous CUDA
-             * implementations, this function here will largely just set up the kernel
-             * call, and you should implement the logic in a separate MatmulKernel() call.
-             *
-             *
-             * Args:
-             *   a: compact 2D array of size m x n
-             *   b: comapct 2D array of size n x p
-             *   out: compact 2D array of size m x p to write the output to
-             *   M: rows of a / out
-             *   N: columns of a / rows of b
-             *   P: columns of b / out
-             */
+            // Define the block and grid sizes
+            dim3 block(TILE_SIZE, TILE_SIZE, 1);
+            dim3 grid((P + TILE_SIZE - 1) / TILE_SIZE, (M + TILE_SIZE - 1) / TILE_SIZE, 1);
 
-            /// BEGIN SOLUTION
-            dim3 grid(BASE_THREAD_NUM, BASE_THREAD_NUM, 1);
-            dim3 block((M + BASE_THREAD_NUM - 1) / BASE_THREAD_NUM,
-                       (P + BASE_THREAD_NUM - 1) / BASE_THREAD_NUM, 1);
+            // Launch the kernel
             MatmulKernel<<<grid, block>>>(a.ptr, b.ptr, out->ptr, M, N, P);
-            /// END SOLUTION
         }
 
         ////////////////////////////////////////////////////////////////////////////////
