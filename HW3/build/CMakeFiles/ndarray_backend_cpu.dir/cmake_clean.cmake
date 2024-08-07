@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/hyjing/Code/DeepLearningSystem/HW3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so"
+  "/home/hyjing/Code/DeepLearningSystem/HW3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-311-x86_64-linux-gnu.so"
   "/home/hyjing/Code/DeepLearningSystem/HW3/python/needle/backend_ndarray/ndarray_backend_cpu.pdb"
   "CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o"
   "CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o.d"

@@ -10,8 +10,8 @@ from ..autograd import TensorTuple, TensorTupleOp
 # NOTE: we will import numpy as the array_api
 # as the backend for our computations, this line will change in later homeworks
 
-import numpy as array_api
-
+from ..backend_selection import array_api, BACKEND 
+from .ops_tuple import *
 
 class EWiseAdd(TensorOp):
     def compute(self, a: NDArray, b: NDArray):
@@ -154,10 +154,10 @@ class Transpose(TensorOp):
 
     def compute(self, a: NDArray):
         # BEGIN YOUR SOLUTION
-        if self.axes:
-            return array_api.swapaxes(a, self.axes[0], self.axes[1])
-        else:
-            return array_api.swapaxes(a, a.ndim - 2, a.ndim - 1)
+        # if self.axes:
+        return a.permute((1, 0))
+        # else:
+        #     return array_api.swapaxes(a, a.ndim - 2, a.ndim - 1)
         # END YOUR SOLUTION
 
     def gradient(self, out_grad, node):

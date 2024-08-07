@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dndarray_backend_cpu_EXPORTS
 
-CXX_INCLUDES = -isystem /usr/include/python3.12 -isystem /home/hyjing/Code/DeepLearningSystem/.venv/lib/python3.12/site-packages/pybind11/include
+CXX_INCLUDES = -isystem /home/hyjing/Code/DeepLearningSystem/.conda/include/python3.11 -isystem /home/hyjing/Code/DeepLearningSystem/.conda/lib/python3.11/site-packages/pybind11/include
 
 CXX_FLAGS = -std=c++11 -O2 -march=native  -fPIC -fvisibility=hidden
 
