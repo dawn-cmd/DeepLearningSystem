@@ -79,7 +79,7 @@ set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64;--std;c++11;-Dndarray_backend_cuda_EXPORTS) # list
-set(CUDA_NVCC_INCLUDE_DIRS [==[/usr/include;/usr/include/python3.12;/home/hyjing/Code/DeepLearningSystem/.venv/lib/python3.12/site-packages/pybind11/include;/usr/include/python3.12;/usr/include]==]) # list (needs to be in lua quotes to address backslashes)
+set(CUDA_NVCC_INCLUDE_DIRS [==[/usr/include;/home/hyjing/anaconda3/include/python3.12;/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/include;/home/hyjing/anaconda3/include/python3.12;/usr/include]==]) # list (needs to be in lua quotes to address backslashes)
 string(REPLACE "\\" "/" CUDA_NVCC_INCLUDE_DIRS "${CUDA_NVCC_INCLUDE_DIRS}")
 set(CUDA_NVCC_COMPILE_DEFINITIONS [==[]==]) # list (needs to be in lua quotes see #16510 ).
 set(format_flag "-c") # string

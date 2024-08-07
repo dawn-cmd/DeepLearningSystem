@@ -61,8 +61,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW"
-      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW"
+      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ"
+      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -70,14 +70,14 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW'
+        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_178f3/fast
-        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_178f3.dir/build.make CMakeFiles/cmTC_178f3.dir/build
-        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW'
-        Building C object CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e556c/fast
+        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e556c.dir/build.make CMakeFiles/cmTC_e556c.dir/build
+        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ'
+        Building C object CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -87,8 +87,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 11.4.0 (Ubuntu 11.4.0-9ubuntu1) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_178f3.dir/'
-         /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_178f3.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEYWTKD.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e556c.dir/'
+         /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e556c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccZ1NApW.s
         GNU C17 (Ubuntu 11.4.0-9ubuntu1) version 11.4.0 (x86_64-linux-gnu)
         	compiled by GNU C version 11.4.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -108,15 +108,15 @@ events:
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         Compiler executable checksum: c61434a74b588249beddd92db7e088a4
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_178f3.dir/'
-         as -v --64 -o CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o /tmp/ccEYWTKD.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e556c.dir/'
+         as -v --64 -o CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o /tmp/ccZ1NApW.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_178f3
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_178f3.dir/link.txt --verbose=1
-        /usr/bin/cc  -v CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o -o cmTC_178f3 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_e556c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e556c.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o -o cmTC_e556c 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -129,11 +129,11 @@ events:
         gcc version 11.4.0 (Ubuntu 11.4.0-9ubuntu1) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_178f3' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_178f3.'
-         /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmYQAlP.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_178f3 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_178f3' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_178f3.'
-        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW'
-        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e556c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_e556c.'
+         /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGpyvWi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e556c /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e556c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_e556c.'
+        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ'
+        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ'
         
       exitCode: 0
   -
@@ -167,14 +167,14 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW']
+        ignore line: [Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_178f3/fast]
-        ignore line: [gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW']
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_178f3.dir/build.make CMakeFiles/cmTC_178f3.dir/build]
-        ignore line: [gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-yhwcWW']
-        ignore line: [Building C object CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e556c/fast]
+        ignore line: [gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ']
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_e556c.dir/build.make CMakeFiles/cmTC_e556c.dir/build]
+        ignore line: [gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-TqOPbZ']
+        ignore line: [Building C object CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -184,8 +184,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-9ubuntu1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_178f3.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_178f3.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEYWTKD.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e556c.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_e556c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccZ1NApW.s]
         ignore line: [GNU C17 (Ubuntu 11.4.0-9ubuntu1) version 11.4.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -205,15 +205,15 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
         ignore line: [Compiler executable checksum: c61434a74b588249beddd92db7e088a4]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_178f3.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o /tmp/ccEYWTKD.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e556c.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o /tmp/ccZ1NApW.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_178f3]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_178f3.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o -o cmTC_178f3 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_e556c]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e556c.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o -o cmTC_e556c ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -226,13 +226,13 @@ events:
         ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-9ubuntu1) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_178f3' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_178f3.']
-        link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmYQAlP.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_178f3 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e556c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_e556c.']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGpyvWi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e556c /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccmYQAlP.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccGpyvWi.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -250,7 +250,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_178f3] ==> ignore
+          arg [cmTC_e556c] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -262,7 +262,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-          arg [CMakeFiles/cmTC_178f3.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_e556c.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -302,8 +302,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3"
-      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3"
+      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo"
+      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -311,14 +311,14 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3'
+        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b285e/fast
-        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b285e.dir/build.make CMakeFiles/cmTC_b285e.dir/build
-        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3'
-        Building CXX object CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_da7c7/fast
+        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_da7c7.dir/build.make CMakeFiles/cmTC_da7c7.dir/build
+        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo'
+        Building CXX object CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -328,8 +328,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 11.4.0 (Ubuntu 11.4.0-9ubuntu1) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b285e.dir/'
-         /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b285e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccJyQwvv.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da7c7.dir/'
+         /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_da7c7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccuXJk6Q.s
         GNU C++17 (Ubuntu 11.4.0-9ubuntu1) version 11.4.0 (x86_64-linux-gnu)
         	compiled by GNU C version 11.4.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -353,15 +353,15 @@ events:
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         Compiler executable checksum: 7176e5e5d7dd1f960839c39dd76e4114
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b285e.dir/'
-         as -v --64 -o CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJyQwvv.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da7c7.dir/'
+         as -v --64 -o CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccuXJk6Q.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_b285e
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b285e.dir/link.txt --verbose=1
-        /usr/bin/c++  -v CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b285e 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_da7c7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da7c7.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_da7c7 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -374,11 +374,11 @@ events:
         gcc version 11.4.0 (Ubuntu 11.4.0-9ubuntu1) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b285e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b285e.'
-         /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdjZiiM.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b285e /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b285e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b285e.'
-        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3'
-        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_da7c7' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_da7c7.'
+         /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNQq6H3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_da7c7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_da7c7' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_da7c7.'
+        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo'
+        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo'
         
       exitCode: 0
   -
@@ -418,14 +418,14 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3']
+        ignore line: [Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b285e/fast]
-        ignore line: [gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3']
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_b285e.dir/build.make CMakeFiles/cmTC_b285e.dir/build]
-        ignore line: [gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-HxVdS3']
-        ignore line: [Building CXX object CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_da7c7/fast]
+        ignore line: [gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo']
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_da7c7.dir/build.make CMakeFiles/cmTC_da7c7.dir/build]
+        ignore line: [gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-Y80dQo']
+        ignore line: [Building CXX object CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -435,8 +435,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-9ubuntu1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b285e.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b285e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccJyQwvv.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da7c7.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_da7c7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccuXJk6Q.s]
         ignore line: [GNU C++17 (Ubuntu 11.4.0-9ubuntu1) version 11.4.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -460,15 +460,15 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
         ignore line: [Compiler executable checksum: 7176e5e5d7dd1f960839c39dd76e4114]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b285e.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJyQwvv.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da7c7.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccuXJk6Q.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_b285e]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b285e.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b285e ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_da7c7]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da7c7.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_da7c7 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -481,13 +481,13 @@ events:
         ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-9ubuntu1) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b285e' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b285e.']
-        link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdjZiiM.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b285e /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_da7c7' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_da7c7.']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNQq6H3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_da7c7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccdjZiiM.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccNQq6H3.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -505,7 +505,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_b285e] ==> ignore
+          arg [cmTC_da7c7] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -517,7 +517,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-          arg [CMakeFiles/cmTC_b285e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_da7c7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -550,16 +550,16 @@ events:
       - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
       - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
       - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
-      - "/home/hyjing/Code/DeepLearningSystem/.venv/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:297 (check_cxx_compiler_flag)"
-      - "/home/hyjing/Code/DeepLearningSystem/.venv/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:342 (_pybind11_return_if_cxx_and_linker_flags_work)"
-      - "/home/hyjing/Code/DeepLearningSystem/.venv/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:409 (_pybind11_generate_lto)"
-      - "/home/hyjing/Code/DeepLearningSystem/.venv/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake:250 (include)"
+      - "/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:297 (check_cxx_compiler_flag)"
+      - "/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:342 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:409 (_pybind11_generate_lto)"
+      - "/home/hyjing/anaconda3/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake:250 (include)"
       - "CMakeLists.txt:16 (find_package)"
     checks:
       - "Performing Test HAS_FLTO"
     directories:
-      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-YUJdGG"
-      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-YUJdGG"
+      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-NjDdB8"
+      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-NjDdB8"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -567,19 +567,19 @@ events:
       variable: "HAS_FLTO"
       cached: true
       stdout: |
-        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-YUJdGG'
+        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-NjDdB8'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_81819/fast
-        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-YUJdGG'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_81819.dir/build.make CMakeFiles/cmTC_81819.dir/build
-        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-YUJdGG'
-        Building CXX object CMakeFiles/cmTC_81819.dir/src.cxx.o
-        /usr/bin/c++ -DHAS_FLTO  -flto -fno-fat-lto-objects -o CMakeFiles/cmTC_81819.dir/src.cxx.o -c /home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-YUJdGG/src.cxx
-        Linking CXX executable cmTC_81819
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_81819.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_81819.dir/src.cxx.o -o cmTC_81819  -flto 
-        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-YUJdGG'
-        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-YUJdGG'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d8a0b/fast
+        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-NjDdB8'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d8a0b.dir/build.make CMakeFiles/cmTC_d8a0b.dir/build
+        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-NjDdB8'
+        Building CXX object CMakeFiles/cmTC_d8a0b.dir/src.cxx.o
+        /usr/bin/c++ -DHAS_FLTO  -flto -fno-fat-lto-objects -o CMakeFiles/cmTC_d8a0b.dir/src.cxx.o -c /home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-NjDdB8/src.cxx
+        Linking CXX executable cmTC_d8a0b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8a0b.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_d8a0b.dir/src.cxx.o -o cmTC_d8a0b  -flto 
+        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-NjDdB8'
+        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-NjDdB8'
         
       exitCode: 0
   -
@@ -594,8 +594,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-6HplSj"
-      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-6HplSj"
+      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-JtRKF3"
+      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-JtRKF3"
     cmakeVariables:
       CMAKE_C_FLAGS: "-fPIC"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -603,19 +603,19 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-6HplSj'
+        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-JtRKF3'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_05ff1/fast
-        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-6HplSj'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_05ff1.dir/build.make CMakeFiles/cmTC_05ff1.dir/build
-        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-6HplSj'
-        Building C object CMakeFiles/cmTC_05ff1.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIC  -o CMakeFiles/cmTC_05ff1.dir/src.c.o -c /home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-6HplSj/src.c
-        Linking C executable cmTC_05ff1
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05ff1.dir/link.txt --verbose=1
-        /usr/bin/cc -fPIC  CMakeFiles/cmTC_05ff1.dir/src.c.o -o cmTC_05ff1 
-        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-6HplSj'
-        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-6HplSj'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_10553/fast
+        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-JtRKF3'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_10553.dir/build.make CMakeFiles/cmTC_10553.dir/build
+        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-JtRKF3'
+        Building C object CMakeFiles/cmTC_10553.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIC  -o CMakeFiles/cmTC_10553.dir/src.c.o -c /home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-JtRKF3/src.c
+        Linking C executable cmTC_10553
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10553.dir/link.txt --verbose=1
+        /usr/bin/cc -fPIC  CMakeFiles/cmTC_10553.dir/src.c.o -o cmTC_10553 
+        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-JtRKF3'
+        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-JtRKF3'
         
       exitCode: 0
   -
@@ -625,8 +625,8 @@ events:
       - "/usr/share/cmake-3.28/Modules/FindCUDA/select_compute_arch.cmake:197 (CUDA_DETECT_INSTALLED_GPUS)"
       - "CMakeLists.txt:66 (CUDA_SELECT_NVCC_ARCH_FLAGS)"
     directories:
-      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-ytl1Nt"
-      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-ytl1Nt"
+      source: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-idVrEP"
+      binary: "/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-idVrEP"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-std=c++11 -O2 -march=native "
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -634,19 +634,19 @@ events:
       variable: "compile_result"
       cached: true
       stdout: |
-        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-ytl1Nt'
+        Change Dir: '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-idVrEP'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9f45d/fast
-        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-ytl1Nt'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_9f45d.dir/build.make CMakeFiles/cmTC_9f45d.dir/build
-        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-ytl1Nt'
-        Building CXX object CMakeFiles/cmTC_9f45d.dir/detect_cuda_compute_capabilities.cpp.o
-        /usr/bin/c++   -std=c++11 -O2 -march=native   -o CMakeFiles/cmTC_9f45d.dir/detect_cuda_compute_capabilities.cpp.o -c /home/hyjing/Code/DeepLearningSystem/HW4/build/detect_cuda_compute_capabilities.cpp
-        Linking CXX executable cmTC_9f45d
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f45d.dir/link.txt --verbose=1
-        /usr/bin/c++ -std=c++11 -O2 -march=native   CMakeFiles/cmTC_9f45d.dir/detect_cuda_compute_capabilities.cpp.o -o cmTC_9f45d  /usr/lib/x86_64-linux-gnu/libcudart_static.a -ldl /usr/lib/x86_64-linux-gnu/librt.a 
-        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-ytl1Nt'
-        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-ytl1Nt'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ec96f/fast
+        gmake[1]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-idVrEP'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ec96f.dir/build.make CMakeFiles/cmTC_ec96f.dir/build
+        gmake[2]: Entering directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-idVrEP'
+        Building CXX object CMakeFiles/cmTC_ec96f.dir/detect_cuda_compute_capabilities.cpp.o
+        /usr/bin/c++   -std=c++11 -O2 -march=native   -o CMakeFiles/cmTC_ec96f.dir/detect_cuda_compute_capabilities.cpp.o -c /home/hyjing/Code/DeepLearningSystem/HW4/build/detect_cuda_compute_capabilities.cpp
+        Linking CXX executable cmTC_ec96f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec96f.dir/link.txt --verbose=1
+        /usr/bin/c++ -std=c++11 -O2 -march=native   CMakeFiles/cmTC_ec96f.dir/detect_cuda_compute_capabilities.cpp.o -o cmTC_ec96f  /usr/lib/x86_64-linux-gnu/libcudart_static.a -ldl /usr/lib/x86_64-linux-gnu/librt.a 
+        gmake[2]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-idVrEP'
+        gmake[1]: Leaving directory '/home/hyjing/Code/DeepLearningSystem/HW4/build/CMakeFiles/CMakeScratch/TryCompile-idVrEP'
         
       exitCode: 0
     runResult:
