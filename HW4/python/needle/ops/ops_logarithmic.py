@@ -29,24 +29,24 @@ class LogSumExp(TensorOp):
 
     def compute(self, Z):
         ### BEGIN YOUR SOLUTION
-        max_Z = Z.max(axis=self.axes, keepdims=True)
-        max_Z_reduced = Z.max(axis=self.axes)
-        return array_api.log(array_api.summation(array_api.exp(Z - max_Z).broadcast_to(Z.shape), axis=self.axes)) + max_Z_reduced
+        max_z_original = Z.max(axis=self.axes, keepdims=True) 
+        max_z_reduce = Z.max(axis=self.axes)
+        return array_api.log(array_api.summation(array_api.exp(Z - max_z_original.broadcast_to(Z.shape)), axis=self.axes)) + max_z_reduce 
         ### END YOUR SOLUTION
 
     def gradient(self, out_grad, node):
         ### BEGIN YOUR SOLUTION
         z = node.inputs[0]
-        z_max_dim = Tensor(z.realize_cached_data().max(self.axes, keepdims=True), device=z.device)
-        z_exp = exp(z + (-z_max_dim).broadcast_to(z.shape))
-        z_exp_sum = summation(z_exp, axes=self.axes)
-        grad_z_exp_sum = out_grad / z_exp_sum
-        ori_shape = z.shape
-        sum_shape = range(len(z.shape)) if self.axes is None else self.axes
-        now_shape = list(ori_shape)
-        for i in sum_shape:
-            now_shape[i] = 1
-        return reshape(grad_z_exp_sum, now_shape).broadcast_to(ori_shape) * z_exp
+        max_z = Tensor(z.realize_cached_data().max(axis=self.axes, keepdims=True), device=z.device)
+        exp_z = exp(z - max_z.broadcast_to(z.shape))
+        sum_exp_z = summation(exp_z, axes=self.axes)
+        grad_sum_exp_z = out_grad / sum_exp_z
+        expand_shape = list(z.shape)
+        axes = range(len(expand_shape)) if self.axes is None else self.axes
+        for axis in axes:
+            expand_shape[axis] = 1
+        grad_exp_z = grad_sum_exp_z.reshape(expand_shape).broadcast_to(z.shape)
+        return grad_exp_z * exp_z
         ### END YOUR SOLUTION
 
 
