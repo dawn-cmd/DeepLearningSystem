@@ -1,4 +1,4 @@
-from tqdm import tqdm  # Import tqdm for progress bars
+import tqdm  # Import tqdm for progress bars
 import needle.nn as nn
 import numpy as np
 import time
