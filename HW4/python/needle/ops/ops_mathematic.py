@@ -359,7 +359,7 @@ class Tanh(TensorOp):
 
     def gradient(self, out_grad, node):
         # BEGIN YOUR SOLUTION
-        return multiply(add_scalar(negate(power_scalar(tanh(node.inputs[0]), 2)), 1), out_grad)
+        return out_grad * (1 - tanh(node.inputs[0]) ** 2)
         # END YOUR SOLUTION
 
 
