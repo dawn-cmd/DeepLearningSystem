@@ -301,11 +301,17 @@ class NDArray:
         """
 
         # BEGIN YOUR SOLUTION
-        assert all([new_shape[i] == self._shape[i] or self._shape[i]
-                   == 1 for i in range(len(self._shape))])
-        new_strides = tuple(self._strides[i] if self._shape[i] ==
-                            new_shape[i] else 0 for i in range(len(self._shape)))
-        return NDArray.make(shape=new_shape, strides=new_strides, device=self._device, handle=self._handle, offset=self._offset)
+        # assert all([new_shape[i] == self._shape[i] or self._shape[i] == 1 for i in range(len(self._shape))])
+        assert len(new_shape) == len(self.shape)
+        new_strides = list(self._strides)
+        for i, dim in enumerate(new_shape):
+            assert self.shape[i] == 1 or self.shape[i] == dim
+            if self.shape[i] != dim:
+                # this is the broadcasted dimension
+                new_strides[i] = 0
+        
+        new_strides = tuple(new_strides)
+        return NDArray.make(new_shape, new_strides, self._device, self._handle, self._offset)
         # END YOUR SOLUTION
 
     # Get and set elements
@@ -671,6 +677,7 @@ def sum(a, axis=None, keepdims=False):
 
 def flip(a, axes):
     return a.flip(axes)
+
 
 def summation(a, axis=None, keepdims=False):
     return a.sum(axis=axis, keepdims=keepdims)

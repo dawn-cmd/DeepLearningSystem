@@ -480,12 +480,13 @@ PYBIND11_MODULE(ndarray_backend_cpu, m)
 
     // return numpy array (with copying for simplicity, otherwise garbage
     // collection is a pain)
-    m.def("to_numpy", [](const AlignedArray& a, std::vector<size_t> shape, std::vector<size_t> strides, size_t offset)
+    m.def("to_numpy", [](const AlignedArray& a, std::vector<size_t> shape,
+                         std::vector<size_t> strides, size_t offset)
           {
-        std::vector<size_t> numpy_strides = strides;
-        std::transform(numpy_strides.begin(), numpy_strides.end(), numpy_strides.begin(),
-                       [](size_t &c) { return c * ELEM_SIZE; });
-        return py::array_t<scalar_t>(shape, numpy_strides, a.ptr + offset); });
+    std::vector<size_t> numpy_strides = strides;
+    std::transform(numpy_strides.begin(), numpy_strides.end(), numpy_strides.begin(),
+                   [](size_t& c) { return c * ELEM_SIZE; });
+    return py::array_t<scalar_t>(shape, numpy_strides, a.ptr + offset); });
 
     // convert from numpy (with copying)
     m.def("from_numpy", [](py::array_t<scalar_t> a, AlignedArray* out)

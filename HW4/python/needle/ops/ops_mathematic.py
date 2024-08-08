@@ -184,7 +184,7 @@ class Reshape(TensorOp):
 
     def gradient(self, out_grad, node):
         # BEGIN YOUR SOLUTION
-        raise out_grad.reshape(node.inputs[0].shape)
+        return out_grad.reshape(node.inputs[0].shape)
         # END YOUR SOLUTION
 
 

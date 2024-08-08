@@ -1,15 +1,15 @@
+from tqdm import tqdm  # Import tqdm for progress bars
+import needle.nn as nn
+import numpy as np
+import time
+import os
+from needle.data import MNISTDataset, DataLoader
+import needle as ndl
 import sys
 sys.path.append("../python")
-import needle as ndl
-from needle.data import MNISTDataset, DataLoader
-import os
-import time
-import numpy as np
-import needle.nn as nn
-from tqdm import tqdm  # Import tqdm for progress bars
 
 np.random.seed(0)
-MY_DEVICE = ndl.numpy
+MY_DEVICE = ndl.cpu_numpy()
 
 
 def ResidualBlock(dim, hidden_dim, norm=nn.BatchNorm1d, drop_prob=0.1):
@@ -68,20 +68,23 @@ def train_mnist(
     hidden_dim=100,
     data_dir="data",
 ):
+    print(data_dir)
     np.random.seed(4)
-    resnet = MLPResNet(28*28, hidden_dim=hidden_dim, num_classes=10, drop_prob=0.2)
+    resnet = MLPResNet(28*28, hidden_dim=hidden_dim,
+                       num_classes=10, drop_prob=0.2)
     opt = optimizer(resnet.parameters(), lr=lr, weight_decay=weight_decay)
-    train_set = MNISTDataset(f"{data_dir}/train-images-idx3-ubyte.gz", 
+    train_set = MNISTDataset(f"{data_dir}/train-images-idx3-ubyte.gz",
                              f"{data_dir}/train-labels-idx1-ubyte.gz")
     test_set = MNISTDataset(f"{data_dir}/t10k-images-idx3-ubyte.gz",
                             f"{data_dir}/t10k-labels-idx1-ubyte.gz")
-    train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True)
-    test_loader = DataLoader(test_set, batch_size=batch_size)
+    train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, device=MY_DEVICE)
+    test_loader = DataLoader(test_set, batch_size=batch_size, device=MY_DEVICE)
 
     for epoch_num in range(epochs):
         print(f"Epoch {epoch_num + 1}/{epochs}")
         train_err, train_loss = epoch(train_loader, resnet, opt)
-        print(f"Train Error: {train_err * 100:.4f}%, Train Loss: {train_loss * 100:.4f}%")
+        print(f"Train Error: {train_err *
+              100:.4f}%, Train Loss: {train_loss * 100:.4f}%")
 
     test_err, test_loss = epoch(test_loader, resnet, None)
     print(f"Test Error: {test_err*100:.4f}%, Test Loss: {test_loss*100:.4f}%")
@@ -90,5 +93,5 @@ def train_mnist(
 
 
 if __name__ == "__main__":
-    train_err, train_loss, test_err, test_loss = train_mnist(data_dir="../data")
-
+    train_err, train_loss, test_err, test_loss = train_mnist(
+        data_dir="/home/hyjing/Code/DeepLearningSystem/HW4/data/")
