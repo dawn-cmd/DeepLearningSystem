@@ -301,16 +301,11 @@ class NDArray:
         """
 
         # BEGIN YOUR SOLUTION
-        # assert all([new_shape[i] == self._shape[i] or self._shape[i] == 1 for i in range(len(self._shape))])
-        assert len(new_shape) == len(self.shape)
-        new_strides = list(self._strides)
-        for i, dim in enumerate(new_shape):
-            assert self.shape[i] == 1 or self.shape[i] == dim
-            if self.shape[i] != dim:
-                # this is the broadcasted dimension
-                new_strides[i] = 0
-        
-        new_strides = tuple(new_strides)
+        assert all([new_shape[i] == self._shape[i] or self._shape[i]
+                   == 1 for i in range(len(self._shape))])
+        # assert len(new_shape) == len(self._shape)
+        new_strides = tuple([0 if i >= len(self._shape) or self._shape[i] !=
+                            new_shape[i] else self._strides[i] for i in range(len(new_shape))])
         return NDArray.make(new_shape, new_strides, self._device, self._handle, self._offset)
         # END YOUR SOLUTION
 
