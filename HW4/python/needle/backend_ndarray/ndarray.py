@@ -666,8 +666,8 @@ def tanh(a):
     return a.tanh()
 
 
-def sum(a, axis=None, keepdims=False):
-    return a.sum(axis=axis, keepdims=keepdims)
+# def sum(a, axis=None, keepdims=False):
+#     return a.sum(axis=axis, keepdims=keepdims)
 
 
 def flip(a, axes):
