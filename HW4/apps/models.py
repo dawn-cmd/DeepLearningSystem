@@ -1,23 +1,38 @@
+import numpy as np
+import math
+import needle.nn as nn
+import needle as ndl
 import sys
 sys.path.append('./python')
-import needle as ndl
-import needle.nn as nn
-import math
-import numpy as np
 np.random.seed(0)
+
+def ResidualBlock(in_channels, out_channels, kernel_size, stride, device=None):
+    main_path = nn.Sequential(nn.ConvBN(in_channels, out_channels, kernel_size, stride, device),
+                              nn.ConvBN(in_channels, out_channels, kernel_size, stride, device))
+    return nn.Residual(main_path)
 
 
 class ResNet9(ndl.nn.Module):
     def __init__(self, device=None, dtype="float32"):
         super().__init__()
         ### BEGIN YOUR SOLUTION ###
-        raise NotImplementedError() ###
-        ### END YOUR SOLUTION
+        self.model = nn.Sequential(nn.ConvBN(3, 16, 7, 4, device=device),
+                                   nn.ConvBN(16, 32, 3, 2, device=device),
+                                   ResidualBlock(32, 32, 3, 1, device=device),
+                                   nn.ConvBN(32, 64, 3, 2, device=device),
+                                   nn.ConvBN(64, 128, 3, 2, device=device),
+                                   ResidualBlock(128, 128, 3, 1,
+                                                 device=device),
+                                   nn.Flatten(),
+                                   nn.Linear(128, 128, device=device),
+                                   nn.ReLU(),
+                                   nn.Linear(128, 10, device=device))
+        # END YOUR SOLUTION
 
     def forward(self, x):
-        ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
-        ### END YOUR SOLUTION
+        # BEGIN YOUR SOLUTION
+        return self.model(x)
+        # END YOUR SOLUTION
 
 
 class LanguageModel(nn.Module):
@@ -34,9 +49,9 @@ class LanguageModel(nn.Module):
         num_layers: Number of layers in RNN or LSTM
         """
         super(LanguageModel, self).__init__()
-        ### BEGIN YOUR SOLUTION
+        # BEGIN YOUR SOLUTION
         raise NotImplementedError()
-        ### END YOUR SOLUTION
+        # END YOUR SOLUTION
 
     def forward(self, x, h=None):
         """
@@ -51,15 +66,17 @@ class LanguageModel(nn.Module):
         h of shape (num_layers, bs, hidden_size) if using RNN,
             else h is tuple of (h0, c0), each of shape (num_layers, bs, hidden_size)
         """
-        ### BEGIN YOUR SOLUTION
+        # BEGIN YOUR SOLUTION
         raise NotImplementedError()
-        ### END YOUR SOLUTION
+        # END YOUR SOLUTION
 
 
 if __name__ == "__main__":
     model = ResNet9()
     x = ndl.ops.randu((1, 32, 32, 3), requires_grad=True)
     model(x)
-    cifar10_train_dataset = ndl.data.CIFAR10Dataset("data/cifar-10-batches-py", train=True)
-    train_loader = ndl.data.DataLoader(cifar10_train_dataset, 128, ndl.cpu(), dtype="float32")
+    cifar10_train_dataset = ndl.data.CIFAR10Dataset(
+        "data/cifar-10-batches-py", train=True)
+    train_loader = ndl.data.DataLoader(
+        cifar10_train_dataset, 128, ndl.cpu(), dtype="float32")
     print(dataset[1][0].shape)
