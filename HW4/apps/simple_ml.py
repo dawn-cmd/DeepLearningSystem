@@ -6,6 +6,8 @@ import numpy as np
 
 import sys
 
+from tqdm import tqdm
+
 sys.path.append("../python")
 import needle as ndl
 
@@ -110,7 +112,26 @@ def epoch_general_cifar10(dataloader, model, loss_fn=nn.SoftmaxLoss(), opt=None)
     """
     np.random.seed(4)
     ### BEGIN YOUR SOLUTION
-    raise NotImplementedError()
+    tot_loss, tot_error = [], 0.0
+    if opt is None:
+        model.eval()
+        for X, y in tqdm(dataloader, desc="Evaluating", leave=False):
+            logits = model(X)
+            loss = loss_fn(logits, y)
+            tot_error += np.sum(logits.numpy().argmax(axis=1) != y.numpy())
+            tot_loss.append(loss.numpy())
+    else:
+        model.train()
+        for X, y in tqdm(dataloader, desc="Training", leave=False):
+            logits = model(X)
+            loss = loss_fn(logits, y)
+            tot_error += np.sum(logits.numpy().argmax(axis=1) != y.numpy())
+            tot_loss.append(loss.numpy())
+            opt.reset_grad()
+            loss.backward()
+            opt.step()
+    sample_nums = len(dataloader.dataset)
+    return tot_error/sample_nums, np.mean(tot_loss)
     ### END YOUR SOLUTION
 
 
@@ -132,9 +153,16 @@ def train_cifar10(model, dataloader, n_epochs=1, optimizer=ndl.optim.Adam,
         avg_acc: average accuracy over dataset from last epoch of training
         avg_loss: average loss over dataset from last epoch of training
     """
-    np.random.seed(4)
     ### BEGIN YOUR SOLUTION
-    raise NotImplementedError()
+    np.random.seed(4)
+    model = ResNet9(device=ndl.cuda())
+    opt = optimizer(model.parameters(), lr=lr, weight_decay=weight_decay)
+    for epoch_num in range(n_epochs):
+        print(f"Epoch {epoch_num + 1}/{n_epochs}")
+        train_err, train_loss = epoch_general_cifar10
+        (dataloader, model, opt)
+        print(f"Train Error: {train_err * 100:.4f}%, Train Loss: {train_loss * 100:.4f}%")
+    return train_err, train_loss
     ### END YOUR SOLUTION
 
 
@@ -153,7 +181,8 @@ def evaluate_cifar10(model, dataloader, loss_fn=nn.SoftmaxLoss):
     """
     np.random.seed(4)
     ### BEGIN YOUR SOLUTION
-    raise NotImplementedError()
+    test_err, test_loss = epoch_general_cifar10(dataloader, model, None)
+    print(f"Test Error: {test_err*100:.4f}%, Test Loss: {test_loss*100:.4f}%")
     ### END YOUR SOLUTION
 
 

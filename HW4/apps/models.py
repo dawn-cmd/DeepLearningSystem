@@ -1,10 +1,13 @@
 import numpy as np
 import math
-import needle.nn as nn
-import needle as ndl
 import sys
 sys.path.append('./python')
 np.random.seed(0)
+from tqdm import tqdm
+import needle.nn as nn
+import needle as ndl
+
+MY_DEVICE = ndl.cuda()
 
 def ResidualBlock(in_channels, out_channels, kernel_size, stride, device=None):
     main_path = nn.Sequential(nn.ConvBN(in_channels, out_channels, kernel_size, stride, device),
@@ -71,12 +74,61 @@ class LanguageModel(nn.Module):
         # END YOUR SOLUTION
 
 
+def epoch(dataloader, model, opt=None):
+    np.random.seed(4)
+    tot_loss, tot_error = [], 0.0
+    loss_fn = nn.SoftmaxLoss()
+    if opt is None:
+        model.eval()
+        for X, y in tqdm(dataloader, desc="Evaluating", leave=False):
+            logits = model(X)
+            loss = loss_fn(logits, y)
+            tot_error += np.sum(logits.numpy().argmax(axis=1) != y.numpy())
+            tot_loss.append(loss.numpy())
+    else:
+        model.train()
+        for X, y in tqdm(dataloader, desc="Training", leave=False):
+            logits = model(X)
+            loss = loss_fn(logits, y)
+            tot_error += np.sum(logits.numpy().argmax(axis=1) != y.numpy())
+            tot_loss.append(loss.numpy())
+            opt.reset_grad()
+            loss.backward()
+            opt.step()
+    sample_nums = len(dataloader.dataset)
+    return tot_error/sample_nums, np.mean(tot_loss)
+
+
+def train_mnist(
+    batch_size=100,
+    epochs=10,
+    optimizer=ndl.optim.Adam,
+    lr=0.001,
+    weight_decay=0.001,
+    hidden_dim=100,
+    data_dir="data",
+):
+    print(data_dir)
+    np.random.seed(4)
+    resnet = ResNet9(device=MY_DEVICE)
+    opt = optimizer(resnet.parameters(), lr=lr, weight_decay=weight_decay)
+    train_set = ndl.data.CIFAR10Dataset("data/cifar-10-batches-py", train=True)
+    test_set = ndl.data.CIFAR10Dataset("data/cifar-10-batches-py", train=True)
+    train_loader = ndl.data.DataLoader(train_set, batch_size=batch_size, shuffle=True, device=MY_DEVICE)
+    test_loader = ndl.data.DataLoader(test_set, batch_size=batch_size, device=MY_DEVICE)
+
+    for epoch_num in range(epochs):
+        print(f"Epoch {epoch_num + 1}/{epochs}")
+        train_err, train_loss = epoch(train_loader, resnet, opt)
+        print(f"Train Error: {train_err *
+              100:.4f}%, Train Loss: {train_loss * 100:.4f}%")
+
+    test_err, test_loss = epoch(test_loader, resnet, None)
+    print(f"Test Error: {test_err*100:.4f}%, Test Loss: {test_loss*100:.4f}%")
+
+    return train_err, train_loss, test_err, test_loss
+
+
 if __name__ == "__main__":
-    model = ResNet9()
-    x = ndl.ops.randu((1, 32, 32, 3), requires_grad=True)
-    model(x)
-    cifar10_train_dataset = ndl.data.CIFAR10Dataset(
-        "data/cifar-10-batches-py", train=True)
-    train_loader = ndl.data.DataLoader(
-        cifar10_train_dataset, 128, ndl.cpu(), dtype="float32")
-    print(dataset[1][0].shape)
+    train_err, train_loss, test_err, test_loss = train_mnist(
+        data_dir="/home/hyjing/Code/DeepLearningSystem/HW4/data/", epochs=50)
